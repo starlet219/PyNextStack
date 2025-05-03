@@ -1,18 +1,23 @@
-# PyNextStack a Full-Stack User Management System with FastAPI, Next.js, and MUI & More...
+# PyNextStack: A Full-Stack User Management System with FastAPI, Next.js, and MUI
 
-
-DEMO: [https://demo-pynextstack.reactatomics.com](https://demo-pynextstack.reactatomics.com)
+### DEMO: [https://demo-pynextstack.reactatomics.com](https://demo-pynextstack.reactatomics.com)
 
 ```
 Username: root
 Password: bringthemhome
 ```
+
+⚡️ **Looking for a fully serverless solution built with Next.js (no Python needed)?**  
+Check out my **Modern Auth** template — simple, secure, and production-ready.  
+🔗 [github.com/georgekhananaev/modern-auth](https://github.com/georgekhananaev/modern-auth)
+
 For the DEMO, only one root user can be logged in at a time. Therefore, it is recommended to register your own user first and then promptly log in as the root user to change your role. Otherwise, you might cause each other to be disconnected while trying the demo.
 
-Please note that in the demo version, ChatGPT will not function as it is not connected to the API. Additionally, you have the option to modify the SMTP settings to suit your needs for testing the forgot-password functionality. It has been successfully tested with GMAIL. Later on, I will disable the edit functionality and added my own SMTP settings for your testing convenience for now just use it as it please.
+Please note that in the demo version, ChatGPT will not function as it is not connected to the API. Additionally, you have the option to modify the SMTP settings to suit your needs for testing the forgot-password functionality. It has been successfully tested with GMAIL. Later on, I will disable the edit functionality and add my own SMTP settings for your testing convenience.
+
 ## Overview
 
-PyNextStack is a full-stack system utilizing FastAPI with asynchronous capabilities on the backend and Next.js for the frontend showcases the robustness of Python in server-side development. This architecture provides a scalable, efficient solution that leverages FastAPI's high performance and ease of use for creating APIs, alongside Next.js for a reactive and server-side rendered user interface. The asynchronous nature of the backend ensures non-blocking operation, enhancing the system's ability to handle high volumes of requests simultaneously, which is ideal for real-time applications. This combination offers a modern, full-stack framework that is both powerful and developer-friendly, demonstrating the versatility of Python in web development.
+PyNextStack is a full-stack system utilizing FastAPI with asynchronous capabilities on the backend and Next.js for the frontend, showcasing the robustness of Python in server-side development. This architecture provides a scalable, efficient solution that leverages FastAPI's high performance and ease of use for creating APIs, alongside Next.js for a reactive and server-side rendered user interface. The asynchronous nature of the backend ensures non-blocking operation, enhancing the system's ability to handle high volumes of requests simultaneously, which is ideal for real-time applications. This combination offers a modern, full-stack framework that is both powerful and developer-friendly, demonstrating the versatility of Python in web development.
 
 ## Key Features
 
@@ -63,32 +68,27 @@ Before you begin, ensure you have met the following requirements:
 
 - **Python**: The project requires the latest version of Python for certain local scripts and integrations. To install Python, visit the [official Python website](https://www.python.org/downloads/) and download the latest version for your operating system. Ensure that Python is properly added to your system's PATH to allow for command-line execution.
 
-
 ## Installation
 Once you have Docker and Python installed, you're ready to proceed with the project setup. The next sections will guide you through configuring your development environment, running the project with Docker, and executing any necessary Python scripts or commands.
-
-
 
 **You can watch this:**
 [![IMAGE ALT TEXT HERE](/screenshots/youtube.png)](https://youtu.be/H2oYT-Ame9w)
 
-
 ### Clone the Repository
-   ```shell
-   git clone https://github.com/georgekhananaev/PyNextStack
-   ```
+```shell
+git clone https://github.com/georgekhananaev/PyNextStack
+```
 
 ### Docker Installation for Full Deployment (4 Containers)
-1. create "chatgpt_credentials.env" file or revise the code in "generate_env.py".
+1. Create "chatgpt_credentials.env" file or revise the code in "generate_env.py".
 
-* Example of chatgpt_credentials.env: 
+* Example of chatgpt_credentials.env:
     ```
     open_ai_organization=org-your_openai_key
     open_ai_secret_key=sk-your_openai_key
     ```
 
 2. Run the Installation.
-
 
 * PowerShell / Linux (Option 1)
     ```shell
@@ -108,15 +108,15 @@ Once you have Docker and Python installed, you're ready to proceed with the proj
     ```shell
     docker-compose up -d
     ```
-  
+
 ## Uninstall
 
-  ```shell
-  docker-compose down -v
-  ```
+```shell
+docker-compose down -v
+```
 
-### If you want to start just the backend (Fastapi)
-Just the FastApi server. You must start mongodb server, redis server first. Change the username and password uri in the .env file above.
+### If you want to start just the backend (FastAPI)
+Just the FastAPI server. You must start MongoDB server, Redis server first. Change the username and password URI in the .env file above.
 
 <details>
 <summary><b>Create a .env File or Run `python generate_env.py`</b></summary>
@@ -148,8 +148,7 @@ owner_email=israel@israeli.com
 # Initial email settings located in app/components/initial settings.py
 ```
 
-Please note: mongodb uri should be "localhost" if you running it locally, or "mongodb" if you running it inside a docker
-container
+Please note: MongoDB URI should be "localhost" if you're running it locally, or "mongodb" if you're running it inside a Docker container.
 </p>
 </details>
 
@@ -158,16 +157,15 @@ container
     python.exe -m pip install --upgrade pip
     ```
     ```shell
-     pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 * Start FastAPI server with Uvicorn
-
     ```shell
     uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     ```
 
-### If you want to frontend (Next.js)
+### If you want to run the frontend (Next.js)
 You need to have Node.js installed on your machine.
 Visit https://nodejs.org/ to download and install the latest version.
 
@@ -184,41 +182,38 @@ NEXT_PUBLIC_API_KEY=static_bearer_secret_key
 ```
 
 Please note: If you are running MongoDB locally, the URI should be set to "localhost". If you are running MongoDB inside a Docker container, the URI should be set to "mongodb".
-container
 </p>
 </details>
 
 * <b>For Development:</b>
-
     ```shell
     npm install
     ```
     ```shell
-     npm run dev
+    npm run dev
     ```
 
 * <b>For Production:</b>
     ```shell
     npm run build
     ```
-  ```shell
+    ```shell
     npm start
     ```
 
 ## Usage
 
 - Frontend: [http://localhost:3000](http://localhost:3000)
-  ```swagger codegen
+  ```
   Username: root
   Password: bringthemhome
   ```
-* Access the API documentation at http://localhost:8000/docs. You can obtain a token by entering your username and password from the text box above. 
+* Access the API documentation at http://localhost:8000/docs. You can obtain a token by entering your username and password from the text box above.
 * Please note that the Swagger UI is also password-protected, and it will temporarily block access if the password is entered incorrectly more than five times, for a duration of five minutes.
-  ```swagger codegen
+  ```
   Username: bringthemhome
   Password: bringthemhome
   ```
-
 
 ## Security Practices
 This application implements advanced security practices including password hashing, token validation, rate limiting, and secure API documentation access.
